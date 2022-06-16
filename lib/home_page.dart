@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:theme_switch_cubits/asset_locator.dart';
 
 import 'theme_cubit/theme_cubit.dart';
 
@@ -11,32 +12,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Theme Switching Demo'),
-      ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // Text(
-            //   'Follow me on my socials',
-            //   style: Theme.of(context).textTheme.bodyText1,
-            // ),
+            Image.asset(
+              context.read<ThemeCubit>().state.themeMode == ThemeMode.dark
+                  ? AssetsLocator.imgNight
+                  : AssetsLocator.imgDay,
+            ),
+            Text(
+              'Follow me on my socials',
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
             const SizedBox(height: 10),
-            // Text(
-            //   'https://github.com/Biplab-Dutta',
-            //   style: Theme.of(context).textTheme.caption,
-            // ),
-            // const SizedBox(height: 10),
-            // Text(
-            //   'https://twitter.com/b_plab98',
-            //   style: Theme.of(context).textTheme.caption,
-            // ),
+            Text(
+              'https://github.com/demo-Ashif',
+              style: Theme.of(context).textTheme.caption,
+            ),
+            const SizedBox(height: 10),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.read<ThemeCubit>().switchTheme(),
+        backgroundColor: Colors.red,
         tooltip: 'Switch Theme',
         child: context.read<ThemeCubit>().state.themeMode == ThemeMode.light
             ? const Icon(Icons.dark_mode)
