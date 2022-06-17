@@ -5,13 +5,13 @@ abstract class AppTheme {
         scaffoldBackgroundColor: Colors.white,
         textTheme: ThemeData.light().textTheme.copyWith(
               bodyText1: const TextStyle(
-                fontSize: 25,
-                color: Colors.black,
+                fontSize: 18,
+                color: Colors.black87,
               ),
               caption: const TextStyle(
                 fontStyle: FontStyle.italic,
-                fontSize: 15,
-                color: Colors.black,
+                fontSize: 14,
+                color: Colors.black87,
               ),
             ),
       );
@@ -20,12 +20,12 @@ abstract class AppTheme {
         scaffoldBackgroundColor: Colors.blueGrey.shade800,
         textTheme: ThemeData.light().textTheme.copyWith(
               bodyText1: const TextStyle(
-                fontSize: 25,
+                fontSize: 18,
                 color: Colors.white,
               ),
               caption: const TextStyle(
                 fontStyle: FontStyle.italic,
-                fontSize: 15,
+                fontSize: 14,
                 color: Colors.white,
               ),
             ),
